@@ -40,7 +40,7 @@
 <div class="min-h-screen grid items-center  mx-auto max-w-[500px]">
     
 
-    <fieldset class="fieldset mx-auto space-y-3 shadow-sm bg-white border-base-300 rounded-box w-xs border p-4">
+    <fieldset class="fieldset mx-auto  shadow-sm bg-white border-base-300 rounded-box w-xs border p-4">
             <div class=" bg-white grid space-y-1 justify-center text-center">
         <img class="mx-auto w-[30%]" src="./assets/github-logo.png" alt="">
         <h2 class="font-bold text-xl">
@@ -55,9 +55,11 @@ Sign in to manage your issues
 
   <label class="label font-bold">Username</label>
   <input id="admin" type="text" class="input" placeholder="Enter admin" required />
+  <p class="text-purple-900 pb-4 text-[12px]">Default: admin</p>
 
   <label class="label font-bold">Password</label>
-  <input id="password" minlength="8" maxlength="8" type="password" class="input" placeholder="Enter admin123" required />
+  <input id="password" minlength="8" maxlength="8" type="password" class="input" placeholder="Enter password" required />
+    <p class="text-purple-900 pb-4 text-[12px]">Default: admin123</p>
 
   <button id="signin-btn" class="btn btn-primary mt-4">Sign In</button>
 </fieldset>
