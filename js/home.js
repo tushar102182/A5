@@ -186,7 +186,7 @@ getid('search').addEventListener('keyup', function(e){
 )
 
 const remove =() =>{
-document.querySelectorAll('.btn').forEach(e=>e.classList.remove('btn-primary', 'text-white','font-semibold'));
+document.querySelectorAll('.bo').forEach(e=>e.classList.remove('btn-primary', 'text-white','font-semibold'));
 
 }
 // buffer load
