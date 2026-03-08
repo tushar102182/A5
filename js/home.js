@@ -138,7 +138,7 @@ const modal =(data)=>{
         </h2>
         <span class=" ${data.status === 'open' ? 'bg-green-600' : 'bg-red-600'}  text-white p-1  text-[12px] font-bold rounded-full ">${data.status.toUpperCase()}</span> 
         
-        <span class="text-[12px] text-[#64748B]">Opened by </span> <span class="text-[14px] text-[#64748B]"> ${data.author.toUpperCase()}</span><span class="text-[14px] text-[#64748B]"> :  ${data.createdAt.split("T")[0]}</span>
+        <span class="text-[12px] pl-3 text-[#64748B]">Opened by </span> <span class="text-[14px] px-2 text-[#64748B]"> ${data.author.toUpperCase()}</span><span class="text-[14px] text-[#64748B]"> :  ${data.createdAt.split("T")[0]}</span>
         <div class="flex gap-2 ">
 
 
@@ -150,12 +150,12 @@ const modal =(data)=>{
         <br>
         <div class="w-11/12 mx-auto my-3 flex justify-between rounded-md p-5 bg-[#F8FAFC]">
             <div>
-<p class="text-[10px] text-[#64748B]">Assignee:</p>
+<p class="text-[10px] py-2 text-[#64748B]">Assignee:</p>
 <p>${data.author.toUpperCase()}</p>
 
             </div>
             <div>
-<p class="text-[14px] text-[#64748B]">Priority:</p>
+<p class="text-[14px] py-2 text-[#64748B]">Priority:</p>
 <p class="${data.priority === 'high' ? 'bg-red-400' : data.priority === 'medium' ? 'bg-yellow-700' : 'bg-blue-400'}  text-[14px] text-white py-1 px-2 rounded-full " >${data.priority.toUpperCase()}</p>
             </div>
 
