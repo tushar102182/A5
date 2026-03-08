@@ -1,6 +1,5 @@
 let All =[];
-// let open =[];
-// let close =[];
+
 
 const loading = getid('load');
 
