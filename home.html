@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="bg-[#F8FAFC]" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+
+    <!-- daisy+tailwind -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- favicon -->
+ <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+
+ <!-- Body font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<!-- styles -->
+ <style>
+    *{
+        font-family: "Geist", sans-serif;
+    }
+
+
+ </style>
+ <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body >
+
+<header class="">
+    <div class="navbar bg-base-100 px-9 shadow-sm">
+  <div class="flex-1">
+    <a class="text-xl items-center  text-center flex gap-1">
+        <img class="w-[4%]" src="./assets/github-logo.png" alt="">
+        <p class="font-semibold">
+            GitHub Issues Tracker
+        </p>
+    </a>
+  </div>
+  <div class="flex gap-2">
+    <input type="text" id="search" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+    <button class="btn btn-primary font-medium"><i class="fa-solid fa-plus"></i> New Issue</button>
+  </div>
+</div>
+</header>
+<section class="  mx-auto my-5 " >
+    <div class="w-11/12 mx-auto bg-white px-9 shadow-sm rounded-md py-6 " >
+<button onclick="displayData(All); color(this) ; length()" id ="all-btn" class="btn btn-primary    text-white font-semibold  h-[28px] ">All</button>
+            <button onclick="filter('open'); color(this)" id = "open-btn" class="btn text-[#64748B] font-normal h-[28px] border border-gray-300">Open</button>
+            <button onclick="filter('closed'); color(this)" id = "closed-btn" class="btn text-[#64748B] font-normal h-[28px] border border-gray-300">Closed</button>
+    </div>
+</section>
+<section class=" my-5">
+    <div class="w-11/12 bg-[#FFFFFF] flex justify-between shadow-sm border-b-1 border-gray-200 rounded-t-md mx-auto p-5">
+        <div class="img-div flex items-center gap-2">
+            <div class="h-[30px] w-[30px] bg-purple-100 grid items-center rounded-full">
+<img class="w-[25px] mx-auto " src="./assets/Aperture.png" alt="">
+            </div>
+            <div>
+                <h2 class="font-semibold text-xl">
+                    <span id="len">
+                        50
+                    </span> Issues
+                </h2>
+                <p class="text-dull">
+                    Track and manage your project issues
+                </p>
+            </div>
+        </div>
+        <div class="active-div flex items-center justify-center gap-3">
+            <div class="flex gap-2">
+                <img class="w-[40%] h-[40%]" src="./assets/Open-Status.png" alt="">
+                <span>Open</span>
+            </div>
+            <div class="flex gap-2">
+                <img class="w-[40%] h-[40%]" src="./assets/Closed- Status .png" alt="">
+                <span>Closed</span>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="load" class="flex justify-center items-center hidden">
+        <span class="loading loading-bars loading-xl"></span>
+        <span class="loading loading-bars loading-xl"></span>
+    </div>
+    <div id="parent" class="w-11/12 bg-[#FBFBFB] grid grid-cols-2 md:grid-cols-4 gap-6 shadow-sm rounded-b-md mx-auto p-5">
+
+       
+        
+    </div>
+
+
+</section>
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div id="detail-container" class="space-y-5">
+        <h2>
+            jsls
+        </h2>
+        <span class="text-white bg-green-400 rounded-full ">Opend</span> <span class="text-[10px] text-[#64748B]">Opened by </span> <span class="text-[10px] text-[#64748B]">Fahim Ahmed   </span><span class="text-[10px] text-[#64748B]">22/02/2026</span>
+        <div class="flex gap-2 ">
+
+
+        </div>
+        <br>
+        <div class="w-10/12 bg-[#F8FAFC]">
+            <div>
+<p class="text-[10px] text-[#64748B]">Assignee:</p>
+<p>Fahim Ahmed</p>
+
+            </div>
+            <div>
+<p class="text-[10px] text-[#64748B]">Priority:</p>
+<p class="text-[10px] text-white bg-red-500 rounded-full " >high</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn btn-primary">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+    <!-- Scripts -->
+     <script src="./js/script.js"></script>
+     <script src="./js/home.js"></script>
+</body>
+</html>
