@@ -2,7 +2,7 @@ let All =[];
 
 
 const loading = getid('load');
-
+// labels er jonno alada color with condition
 const getLevel = (levels) => {
     const result = levels.map(l=> {
 
