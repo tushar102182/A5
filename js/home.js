@@ -131,6 +131,7 @@ fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
 })
 const modal =(data)=>{
     const detailbox = getid("detail-container");
+    // modal er output
     detailbox.innerHTML = `
       <h2 class="font-bold text-xl">
             ${data.title}
@@ -161,9 +162,10 @@ const modal =(data)=>{
         </div>
     
     `
+    // modal show korar jonno showmodal use
 getid('my_modal_5').showModal();
 }
-
+// search option
 getid('search').addEventListener('keyup', function(e){
     load();
 
@@ -172,18 +174,22 @@ getid('search').addEventListener('keyup', function(e){
     .then(res => res.json())
     .then(data => {
         const all=data.data;
+        // data gula filter(e=>e.tittle.includes(input)) kore dekhsi ja ja ase ta display korai
         const filteredData = all.filter(issue => 
             issue.title.toLowerCase().includes(input));
         displayData(filteredData);
+        // all button er color remove 
         remove();
     });
 
 }
 )
+
 const remove =() =>{
 document.querySelectorAll('.btn').forEach(e=>e.classList.remove('btn-primary', 'text-white','font-semibold'));
 
 }
+// buffer load
 function load(){
     loading.classList.remove('hidden');
     
