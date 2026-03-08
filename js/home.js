@@ -19,17 +19,20 @@ const getLevel = (levels) => {
 }
 
 async function allLists() {
+    // buffer load
     load();
+    // issue load
 
 const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
 const data = await res.json();
-All=data.data;
+// data er moddde data ase tai data.data
+All=data.data; 
 getid('len').innerText = All.length;
 displayData(All);
 
 }
 const displayData = (data)=>{
-    
+    // parent nisi pore append korar jonno
     const parent = getid('parent');
     parent.innerHTML=''
 data.forEach(e=>{
@@ -73,6 +76,7 @@ data.forEach(e=>{
 
 
 }) 
+// jokhon load hoi jabe buffer tokhon off kora lagbe ,moja hoilo eitay search thekeo call asbe 
 removeLoad();
 }
 allLists()
@@ -81,6 +85,7 @@ const closedbtn = getid("closed-btn")
 const allbtn = getid("all-btn")
 
 function filter(status){
+    // open/close status er jonno data load kortesi filter kore and opore length o change kore disi click er sathe
     const freshdata = All.filter(e=>e.status === status);
     getid('len').innerText = freshdata.length;
     
@@ -91,6 +96,7 @@ displayData(freshdata);
 
 
 }
+// easy task clear kora and add kora color er classlist
 function color(id){
      document.querySelectorAll("#all-btn, #open-btn, #closed-btn").forEach(b=>{
         
@@ -105,10 +111,13 @@ id.classList.remove("text-[#64748B]", "font-normal", "border", "border-gray-300"
 id.classList.add('btn-primary', 'text-white', 'font-semibold');
 
 }
+// modal add koresi
 const pd= getid('parent');
 pd.addEventListener("click",function(e){
     const card = e.target.closest('.card-item');
     if(!card) return;
+    // card e ekta data-id disi jeta diye dataset er maddhome id no passi
+    // id no o dynamic way te niye nisi card section e
    const id = card.dataset.id;
 
 
