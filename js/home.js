@@ -199,6 +199,7 @@ function removeLoad(){
    
 
 }
+// all er length
 function length (){
     getid('len').innerText = All.length;
 }
