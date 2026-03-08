@@ -39,7 +39,7 @@ data.forEach(e=>{
     const div = document.createElement('div');
     div.innerHTML=`
 
-    <div id="card" class="p-3 card-item h-[100%] space-y-2 rounded-md min-w-[250px] shadow-lg bg-[#FFFFFF]" data-id="${e.id}">
+    <div id="card" class="${e.status === 'open' ? 'border-green-400' : 'border-purple-400'} p-3 border-t-2 card-item h-[100%] space-y-2 rounded-md min-w-[250px] shadow-lg bg-[#FFFFFF]" data-id="${e.id}">
             <div class="flex justify-between">
                <img 
     class="w-[8%] h-[8%]" 
